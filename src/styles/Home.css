@@ -1,4 +1,22 @@
+.apiResults {
+    display: flex;
+    padding: 50px;
+}
+
 .single-result {
     border: solid 1px black;
-    width: 40%;
+    min-width: 400px;
+}
+
+.single-result .thumbnail img {
+    height: 40%;
+    width: 100%;
+}
+
+.single-result .categories {
+    display: flex;
+}
+
+.single-result .category {
+    border: solid 1px black;
 }
