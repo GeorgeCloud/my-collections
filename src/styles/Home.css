@@ -3,6 +3,10 @@
     padding: 50px;
 }
 
+div {
+    /* border: solid 1px black; */
+}
+
 .single-result {
     border: solid 1px black;
     min-width: 400px;
@@ -13,10 +17,26 @@
     width: 100%;
 }
 
+.single-result .pin-icn {
+    height: 20px;
+    width: 20px;
+}
+
 .single-result .categories {
     display: flex;
+    justify-content: center;
 }
 
 .single-result .category {
     border: solid 1px black;
+    padding: 2px;
+    margin: 2px;
+}
+
+.single-result .footer {
+    display: flex;
+}
+
+.single-result .footer div {
+    width: 50%;
 }

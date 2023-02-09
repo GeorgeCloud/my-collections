@@ -1,4 +1,5 @@
 import '../styles/Home.css'
+import BusinessCard from './BusinessCard'
 import searchYelpBusinesses from '../utils/yelp'
 
 // const businesses = searchYelpBusinesses('taco bell');
@@ -30,31 +31,7 @@ function Home(){
             <div className="apiResults">
                 {businessesMockData.map(business => {
                     return (
-                        <div className="single-result">
-                            <div className='thumbnail'>
-                                <img src={business.imgUrl} alt="Business Thumbnail"></img>
-                            </div>
-
-                            <div>
-                                <h3>{ business.name }</h3>
-                                <p>{ business.location }</p>
-
-                                <small>
-                                    { business.rating } { business.numOfReviews }
-                                </small>
-                                <div className='categories'>
-                                    {business.categories.map(category => {
-                                        return(
-                                            <div className='category'>
-                                                <small>{ category }</small>
-                                            </div>
-                                        )
-                                    })}
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
+                        <BusinessCard business={business} />
                     )
                 })}
             </div>
