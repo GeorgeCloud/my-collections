@@ -1,21 +1,20 @@
 import '../styles/NavBar.css'
 
+import { Link } from 'react-router-dom';
+
 function NavBar(){
     return (
         <nav>
             <ul>
                 <li>
-                    <p>MyCollections</p>
+                    <Link to='/'>MyCollections</Link>
                 </li>
 
                 <li>
-                    <p>Home</p>
+                    <Link to='/'>Home</Link>
                 </li>
                 <li>
-                    <p>Collections</p>
-                </li>
-                <li>
-                    <p>Settings</p>
+                    <Link to='/collections'>Collections</Link>
                 </li>
             </ul>
         </nav>
