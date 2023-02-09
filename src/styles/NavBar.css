@@ -1,5 +1,30 @@
-
+nav {
+  display: flex;
+  width: calc(100vw - 60px);
+  padding: 30px;
+  justify-content: space-between;
+  align-items: center;
+  
+}
 
 ul {
   list-style-type: none;
+}
+
+.company {
+  color: black;
+  text-decoration: none;
+}
+
+.company > img {
+  height: 20px;
+  width: 20px;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links > li {
+  margin-right: 10px;
 }

@@ -1,6 +1,7 @@
 .apiResults {
     display: flex;
-    padding: 50px;
+    padding: 30px;
+    max-width: 1000px;
 }
 
 div {

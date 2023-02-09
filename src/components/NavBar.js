@@ -5,14 +5,16 @@ import { Link } from 'react-router-dom';
 function NavBar(){
     return (
         <nav>
-            <ul>
-                <li>
-                    <Link to='/'>MyCollections</Link>
-                </li>
+            <Link className='company' to='/'>
+                MyCollections
+                <img src='https://static.thenounproject.com/png/2221162-200.png' alt='Logo'/>
+            </Link>
 
+            <ul class="nav-links">
                 <li>
                     <Link to='/'>Home</Link>
                 </li>
+
                 <li>
                     <Link to='/collections'>Collections</Link>
                 </li>
@@ -20,5 +22,6 @@ function NavBar(){
         </nav>
     )
 }
+
 
 export default NavBar
