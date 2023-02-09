@@ -10,7 +10,7 @@ function NavBar(){
                 <img src='https://static.thenounproject.com/png/2221162-200.png' alt='Logo'/>
             </Link>
 
-            <ul class="nav-links">
+            <ul className="nav-links">
                 <li>
                     <Link to='/'>Home</Link>
                 </li>

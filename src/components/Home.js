@@ -26,7 +26,20 @@ function Home(){
     return (
         <div>
             <h1>Yelp</h1>
-            <input placeholder='tacos, cheap dinner, target'></input>
+
+            <div>
+                <input
+                    className='searchBusinessInput'
+                    placeholder='tacos, cheap dinner, target'
+                    required
+                />
+                <button
+                className='searchButton'
+                onClick={() => console.log('clicked')}>
+                    Search
+                    {/* <img src='https://cdn-icons-png.flaticon.com/512/1086/1086916.png'></img> */}
+                </button>
+            </div>
 
             <div className="apiResults">
                 {businessesMockData.map(business => {

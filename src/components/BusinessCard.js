@@ -12,7 +12,7 @@ function BusinessCard(props){
             <div>
                 <h3>{ business.name }</h3>
 
-                <img class="pin-icn" src="https://cdn-icons-png.flaticon.com/512/484/484167.png" alt="pin icon"/>
+                <img className="pin-icn" src="https://cdn-icons-png.flaticon.com/512/484/484167.png" alt="pin icon"/>
                 <span>{ business.location }</span>
 
                 <Categories categories={ business.categories }></Categories>

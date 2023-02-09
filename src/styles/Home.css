@@ -1,11 +1,33 @@
+.searchBusinessInput {
+    padding: 0.5rem;
+    width: 10rem;
+    margin: 0;
+    border: solid 1px;
+    border-radius: 10px 0 0 10px;
+}
+
+.searchBusinessInput:focus {
+    outline-width: 0;
+}
+
+.searchButton {
+    height: 33px;
+    width: 60px;
+    border-radius: 0 10px 10px 0;
+    border: 0px;
+    color: white;
+    background-color: black;
+}
+
+/* .searchButton img {
+    height: 100%;
+    width: 100%;
+} */
+
 .apiResults {
     display: flex;
     padding: 30px;
     max-width: 1000px;
-}
-
-div {
-    /* border: solid 1px black; */
 }
 
 .single-result {
