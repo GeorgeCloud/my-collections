@@ -40,15 +40,20 @@
     border: solid 1px black;
     height: fit-content;
     margin: 10px 0px;
+    border-radius: 11px;
+    transition: box-shadow .3s;
 }
 
-.business-card > a {
-    color: black;
+.business-card:hover {
+    /* box-shadow: 0 0 11px rgba(31, 31, 31, 0.2); */
+    box-shadow: .30rem .30rem 0rem #000000;
+    cursor: pointer;
 }
 
 .business-card .thumbnail > img {
     height: 100%;
     width: 100%;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .business-card .pin-icn {
@@ -64,8 +69,9 @@
 
 .business-card .category {
     border: solid 1px black;
-    padding: 2px;
+    padding: 3px;
     margin: 2px;
+    /* border-radius: 10px; */
 }
 
 .business-card .footer {
@@ -82,6 +88,15 @@
     border-right: solid 1px black;
 }
 
-.business-card .footer .price  {
+.business-card .footer .right-div  {
+    padding: 6px 0 0 0px;
     border-top: solid 1px black;
+}
+
+.right-div button {
+    height: 2.5rem;
+    width: 5rem;
+    background-color: black;
+    color: white;
+    border: none;
 }

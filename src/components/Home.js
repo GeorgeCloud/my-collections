@@ -4,33 +4,16 @@ import SearchResults from './SearchResults'
 import searchYelpBusinesses from '../utils/yelp'
 import { useEffect, useState } from 'react'
 
-const business = {
-    'id': 0,
-    'name': 'La Mar',
-    'imgUrl': 'https://s3-media0.fl.yelpcdn.com/bphoto/hI4L8cMY1JY_UKq7ZYBpTw/o.jpg',
-    'categories': ['Latin America', 'Seafood', 'Peruvian'],
-    'numOfReviews': 0,
-    'price': '$$$',
-    'location': 'Embarcadero',
-    'rating': 4.5,
-}
-
-const businessesMockData = [
-    business, business, business,
-    business, business, business,
-    business, business, business,
-    business
-]
-
 function Home(){
     const [businesses, setBusinesses] = useState([])
 
     useEffect(() => {
-        async function x(){
-            const businessesData = await searchYelpBusinesses()
+        (async function() {
+            const coords = {latitude: '37.7749', longitude: '-122.4194'}
+            const searchQuery = 'burgers'
+            const businessesData = await searchYelpBusinesses(coords, searchQuery)
             setBusinesses(businessesData);
-        }
-        x()
+        })()
     }, [])
 
     return (
@@ -43,10 +26,6 @@ function Home(){
             </div>
 
             <SearchResults businesses={businesses}/>
-            {/* {yelpData.then(data => {
-                return <p>{data}</p>
-                // return <SearchResults businesses={yelpData}/>
-            })} */}
         </main>
     )
 }
