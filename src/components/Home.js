@@ -1,8 +1,8 @@
 import '../styles/Home.css'
-import BusinessCard from './BusinessCard'
+import SearchBusiness from './SearchBusiness'
+import SearchResults from './SearchResults'
 import searchYelpBusinesses from '../utils/yelp'
-
-// const businesses = searchYelpBusinesses('taco bell');
+import { useEffect, useState } from 'react'
 
 const business = {
     'id': 0,
@@ -23,33 +23,32 @@ const businessesMockData = [
 ]
 
 function Home(){
+    const [businesses, setBusinesses] = useState([])
+
+    useEffect(() => {
+        async function x(){
+            const businessesData = await searchYelpBusinesses()
+            setBusinesses(businessesData);
+        }
+        x()
+    }, [])
+
     return (
-        <div>
-            <h1>Yelp</h1>
+        <main>
+            <div className='page-header'>
+                <h1>Yelp</h1>
+                <p>Create a <u>collection</u> of place you love going to!</p>
 
-            <div>
-                <input
-                    className='searchBusinessInput'
-                    placeholder='tacos, cheap dinner, target'
-                    required
-                />
-                <button
-                className='searchButton'
-                onClick={() => console.log('clicked')}>
-                    Search
-                    {/* <img src='https://cdn-icons-png.flaticon.com/512/1086/1086916.png'></img> */}
-                </button>
+                <SearchBusiness/>
             </div>
 
-            <div className="apiResults">
-                {businessesMockData.map(business => {
-                    return (
-                        <BusinessCard business={business} />
-                    )
-                })}
-            </div>
-        </div>
+            <SearchResults businesses={businesses}/>
+            {/* {yelpData.then(data => {
+                return <p>{data}</p>
+                // return <SearchResults businesses={yelpData}/>
+            })} */}
+        </main>
     )
 }
 
-export default Home
+export default Home;

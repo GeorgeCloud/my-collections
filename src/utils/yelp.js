@@ -1,27 +1,15 @@
 // https://docs.developer.yelp.com/docs
 // Daily API limit	5000.0
-// const YELP_CLIENT_ID = ''
 
-async function searchYelpBusinesses(businessName){
-    const YELP_API_URL   = 'https://api.yelp.com/v3/businesses/search?location=san%20francisco&sort_by=best_match&limit=20'
-    const YELP_API_KEY   = ''
+async function searchYelpBusinesses(){
+  // Fetch Yelp data through internal proxy server
 
-    const options = {
-        method: 'GET',
-        'mode': 'no-cors',
-        'Access-Control-Allow-Origin': '*',
-        headers: {
-          accept: 'application/json',
-          Authorization: `Bearer ${YELP_API_KEY}`
-        }
-    }
-      
-    fetch(YELP_API_URL, options)
-        .then(response => response.json())
-        .then(responseData => console.log(responseData))
-        .catch(error => console.error(error))
+  const url = '/businesses?' + new URLSearchParams({ latitude: 37.7749, longitude: -122.4194 }).toString()
 
-    // return yelpBusinesses
+  const proxyResponse = await fetch(url);
+  const yelpData = await proxyResponse.json();
+
+  return yelpData.businesses
 }
 
 export default searchYelpBusinesses;

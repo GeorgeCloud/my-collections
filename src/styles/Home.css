@@ -1,3 +1,9 @@
+.page-header {
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    padding: 50px;
+}
+
 .searchBusinessInput {
     padding: 0.5rem;
     width: 10rem;
@@ -19,47 +25,63 @@
     background-color: black;
 }
 
-/* .searchButton img {
+.business-card-grid {
+    gap: 1rem;
+    position: relative;
+    column-count: 3;
+    margin: auto;
+    padding: 30px;
+    width: 800px;
+}
+
+.business-card {
+    display: inline-block;
+    position: relative;
+    border: solid 1px black;
+    height: fit-content;
+    margin: 10px 0px;
+}
+
+.business-card > a {
+    color: black;
+}
+
+.business-card .thumbnail > img {
     height: 100%;
     width: 100%;
-} */
-
-.apiResults {
-    display: flex;
-    padding: 30px;
-    max-width: 1000px;
 }
 
-.single-result {
-    border: solid 1px black;
-    min-width: 400px;
-}
-
-.single-result .thumbnail img {
-    height: 40%;
-    width: 100%;
-}
-
-.single-result .pin-icn {
+.business-card .pin-icn {
     height: 20px;
     width: 20px;
 }
 
-.single-result .categories {
+.business-card .categories {
     display: flex;
     justify-content: center;
+    margin-top: 5px;
 }
 
-.single-result .category {
+.business-card .category {
     border: solid 1px black;
     padding: 2px;
     margin: 2px;
 }
 
-.single-result .footer {
+.business-card .footer {
     display: flex;
 }
 
-.single-result .footer div {
+.business-card .footer > div {
+    margin-top: 10px;
     width: 50%;
+}
+
+.business-card .footer .rating  {
+    border-top: solid 1px black;
+    border-right: solid 1px black;
+}
+
+.business-card .footer .price  {
+    border-top: solid 1px black;
 }
