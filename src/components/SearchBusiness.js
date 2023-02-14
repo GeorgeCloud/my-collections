@@ -7,7 +7,7 @@ function SearchBusiness(){
                 required
             />
             <button
-            className='searchButton'
+            className='search-btn hover-effect'
             onClick={() => console.log('clicked')}>
                 Search
                 {/* <img src='https://cdn-icons-png.flaticon.com/512/1086/1086916.png'></img> */}

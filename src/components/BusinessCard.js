@@ -28,13 +28,13 @@ function BusinessCard(props){
                 <div className='footer'>
                     <div className='rating'>
                         <p>
-                            { business.rating }☆ 
+                            { business.rating }☆
                             (<u>{ business.review_count }</u>)
                         </p>
                     </div>
 
                     <div className='right-div'>
-                        <button>add to collection</button>
+                        <button className='cta-btn hover-effect'>Add To Collection</button>
                     </div>
                 </div>
             </div>
