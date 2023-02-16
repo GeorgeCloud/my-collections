@@ -1,7 +1,6 @@
 import '../styles/Home.css'
 import SearchBusiness from './SearchBusiness'
 import SearchResults from './SearchResults'
-import searchYelpBusinesses from '../utils/yelp'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getBusinesses } from '../features/businesses/businessesThunk'
@@ -16,10 +15,7 @@ function Home(){
         (async function() {
             navigator.geolocation.getCurrentPosition(
                 async function(position){
-                    dispatch(getBusinesses({
-                        position: position,
-                        searchTerm: searchTerm
-                    }));
+                    dispatch(getBusinesses({ position: position, searchTerm: searchTerm }));
                 }
             )
         })()

@@ -34,7 +34,7 @@ function BusinessCard(props){
                     </div>
 
                     <div className='right-div'>
-                        <button className='cta-btn hover-effect'>Add To Collection</button>
+                        <button className='cta-btn hover-effect'>Add</button>
                     </div>
                 </div>
             </div>
