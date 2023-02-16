@@ -1,18 +1,29 @@
+import { useDispatch } from 'react-redux'
+import { useState } from 'react'
+import { newSearch } from '../features/search/searchSlice'
+
 function SearchBusiness(){
+    const [searchString, setSearchString] = useState('')
+    const dispatcher = useDispatch()
+
     return (
-        <div>
+        <form>
             <input
                 className='searchBusinessInput'
                 placeholder='tacos, cheap dinner, target'
+                onChange={(e) => {setSearchString(e.target.value)}}
+                value={searchString}
                 required
             />
             <button
-            className='search-btn hover-effect'
-            onClick={() => console.log('clicked')}>
+                className='search-btn hover-effect'
+                onClick={(e) => {
+                    e.preventDefault();
+                    dispatcher(newSearch(searchString))
+            }}>
                 Search
-                {/* <img src='https://cdn-icons-png.flaticon.com/512/1086/1086916.png'></img> */}
             </button>
-        </div>
+        </form>
     )
 }
 

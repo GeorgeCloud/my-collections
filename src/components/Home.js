@@ -2,19 +2,28 @@ import '../styles/Home.css'
 import SearchBusiness from './SearchBusiness'
 import SearchResults from './SearchResults'
 import searchYelpBusinesses from '../utils/yelp'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { getBusinesses } from '../features/businesses/businessesThunk'
 
 function Home(){
-    const [businesses, setBusinesses] = useState([])
+    // Reminder: rename state object names -> https://redux.js.org/usage/structuring-reducers/using-combinereducers
+    let searchTerm = useSelector(state => state.searchReducer.value)
+    let businesses = useSelector(state => state.businessesReducer.value)
+    const dispatch = useDispatch()
 
     useEffect(() => {
         (async function() {
-            const coords = {latitude: '37.7749', longitude: '-122.4194'}
-            const searchQuery = 'burgers'
-            const businessesData = await searchYelpBusinesses(coords, searchQuery)
-            setBusinesses(businessesData);
+            navigator.geolocation.getCurrentPosition(
+                async function(position){
+                    dispatch(getBusinesses({
+                        position: position,
+                        searchTerm: searchTerm
+                    }));
+                }
+            )
         })()
-    }, [])
+    }, [searchTerm])
 
     return (
         <main>

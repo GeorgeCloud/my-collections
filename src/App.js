@@ -21,7 +21,6 @@ function App() {
           <Route path='/collections' element={<Collections/>} />
         </Routes>
       </Router>
-
     </div>
   );
 }

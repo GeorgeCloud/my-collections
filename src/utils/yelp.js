@@ -2,11 +2,11 @@
 // Daily API limit	5000.0
 
 // Fetch Yelp data through internal proxy server
-async function searchYelpBusinesses(coords, searchQuery){
+async function searchYelpBusinesses(position, searchTerm){
   const url = '/businesses?' + new URLSearchParams({
-    latitude  : coords['latitude'],
-    longitude : coords['longitude'],
-    query     : searchQuery
+    latitude  : position.coords.latitude,
+    longitude : position.coords.longitude,
+    term     : searchTerm
   }).toString();
 
   const proxyResponse = await fetch(url);
