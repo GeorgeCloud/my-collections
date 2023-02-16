@@ -1,10 +1,23 @@
-import { useDispatch } from 'react-redux'
-import { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { useState, useEffect } from 'react'
 import { newSearch } from '../features/search/searchSlice'
+import { getBusinesses } from '../features/businesses/businessesThunk'
 
 function SearchBusiness(){
     const [searchString, setSearchString] = useState('')
-    const dispatcher = useDispatch()
+    const searchTerm = useSelector(state => state.searchReducer.value)
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        (async function() {
+            navigator.geolocation.getCurrentPosition(
+                async function(position){
+                    dispatch(getBusinesses({ position: position, searchTerm: searchTerm }));
+                }
+            )
+        })()
+    }, [searchTerm])
 
     return (
         <form>
@@ -19,7 +32,7 @@ function SearchBusiness(){
                 className='search-btn hover-effect'
                 onClick={(e) => {
                     e.preventDefault();
-                    dispatcher(newSearch(searchString))
+                    dispatch(newSearch(searchString))
             }}>
                 Search
             </button>

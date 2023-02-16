@@ -1,25 +1,11 @@
 import '../styles/Home.css'
+import { useSelector } from 'react-redux'
 import SearchBusiness from './SearchBusiness'
 import SearchResults from './SearchResults'
-import { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { getBusinesses } from '../features/businesses/businessesThunk'
 
 function Home(){
     // Reminder: rename state object names -> https://redux.js.org/usage/structuring-reducers/using-combinereducers
-    let searchTerm = useSelector(state => state.searchReducer.value)
     let businesses = useSelector(state => state.businessesReducer.value)
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        (async function() {
-            navigator.geolocation.getCurrentPosition(
-                async function(position){
-                    dispatch(getBusinesses({ position: position, searchTerm: searchTerm }));
-                }
-            )
-        })()
-    }, [searchTerm])
 
     return (
         <main>
