@@ -6,7 +6,7 @@ function SearchResults({ businesses }){
             {businesses && (
                 businesses.map(business => {
                     return (
-                        <BusinessCard business={business} />
+                        <BusinessCard business={business} key={business.name} />
                     )
                 })
             )}

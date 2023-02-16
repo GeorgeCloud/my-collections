@@ -5,12 +5,13 @@ function BusinessCard(props){
     const { business } = props;
 
     return (
-            <div className="business-card" key={business.name}>
-                <div className='thumbnail'>
-                    <img src={ business.image_url } alt="Business Thumbnail"></img>
-                </div>
+            <div className="business-card">
+                <a href={business.url} target="_blank">
 
-                <a href={business.url}>
+                    <div className='thumbnail'>
+                        <img src={ business.image_url } alt="Business Thumbnail"></img>
+                    </div>
+
                     <div>
                         <h3>
                             { business.name }
@@ -20,8 +21,7 @@ function BusinessCard(props){
                         <img className="pin-icn" src={pinIcon} alt="pin icon"/>
                         <span>{ business.location.address1 }</span>
 
-                        {/* business.categories */}
-                        <Categories categories={ ['Sea Food', 'Vegan', 'American'] }></Categories>
+                        <Categories categories={ business.categories.map(cate => {return cate.title}) } />
                     </div>
                 </a>
 

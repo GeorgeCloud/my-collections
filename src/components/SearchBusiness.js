@@ -4,18 +4,18 @@ import { newSearch } from '../features/search/searchSlice'
 import { getBusinesses } from '../features/businesses/businessesThunk'
 
 function SearchBusiness(){
-    const [searchString, setSearchString] = useState('')
+    const [searchString, setSearchString] = useState('Food')
     const searchTerm = useSelector(state => state.searchReducer.value)
 
     const dispatch = useDispatch()
 
     useEffect(() => {
         (async function() {
-            navigator.geolocation.getCurrentPosition(
-                async function(position){
-                    dispatch(getBusinesses({ position: position, searchTerm: searchTerm }));
-                }
-            )
+            navigator.geolocation.getCurrentPosition(async function(position){
+                dispatch(
+                    getBusinesses({ position: position, searchTerm: searchTerm })
+                )
+            })
         })()
     }, [searchTerm])
 

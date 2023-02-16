@@ -6,7 +6,7 @@ function Categories(props){
             {categories.map(category => {
                 return(
                     <div className='category'>
-                        <small>{ category }</small>
+                        { category }
                     </div>
                 )
             })}
