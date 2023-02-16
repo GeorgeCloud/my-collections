@@ -11,15 +11,21 @@ export const getBusinesses = createAsyncThunk(
 export const businessesSlice = createSlice({
     name: 'businesses',
     initialState: {
-      value: []
+      value: [],
+      isLoading: null
     },
     reducers: {
-      update: (state, action) => { state.value = action.payload }
     },
     extraReducers: (builder) => {
-      builder.addCase(getBusinesses.fulfilled, (state, action) => {
-        state.value = action.payload
-      })
+      builder
+        .addCase(getBusinesses.pending, (state) => {
+          console.log('loading')
+          state.isLoading = true
+        })
+        .addCase(getBusinesses.fulfilled, (state, action) => {
+          state.value = action.payload
+          state.isLoading = false
+        })
     },
 })
 

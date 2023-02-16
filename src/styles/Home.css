@@ -1,7 +1,16 @@
 .page-header {
     border-top: solid 1px;
     border-bottom: solid 1px;
-    padding: 50px;
+    padding: 20px 0;
+    height: 20vh;
+}
+
+.content {
+    height: calc(100vh - 30vh - 42px);
+}
+
+.content img {
+    height: 500px;
 }
 
 .searchBusinessInput {

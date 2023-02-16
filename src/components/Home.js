@@ -6,6 +6,7 @@ import LoadingScreen from './LoadingScreen'
 
 function Home(){
     // Reminder: rename state object names -> https://redux.js.org/usage/structuring-reducers/using-combinereducers
+    let isLoading = useSelector(state => state.businessesReducer.isLoading)
     let businesses = useSelector(state => state.businessesReducer.value)
 
     return (
@@ -17,8 +18,12 @@ function Home(){
                 <SearchBusiness/>
             </div>
 
-            {/* <SearchResults businesses={businesses}/> */}
-            <LoadingScreen />
+            <div className='content'>
+                {isLoading
+                    ? <LoadingScreen />
+                    : <SearchResults businesses={businesses}/>
+                }
+            </div>
         </main>
     )
 }
