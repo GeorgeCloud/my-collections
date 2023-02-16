@@ -5,14 +5,21 @@ function Collections(){
     const myCollections = useSelector(state => state.collectionsReducer.value)
 
     return (
-        <div className='Collections'>
-            <h2>My Favorites</h2>
-            {myCollections.map(collection => {
-                return (
-                    <BusinessCard business={collection}></BusinessCard>
-                )
-            })}
-        </div>
+            <div>
+                <div className='page-header'>
+                    <h2>My Collections</h2>
+                    <p>{myCollections.length} items</p>
+                    <p>Joined today</p>
+                </div>
+
+                <div className='business-card-grid'>
+                    {myCollections.map(collection => {
+                        return (
+                            <BusinessCard business={collection}></BusinessCard>
+                        )
+                    })}
+                </div>
+            </div>
     )
 }
 

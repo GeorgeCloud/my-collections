@@ -13,7 +13,7 @@ function Home(){
         <main>
             <div className='page-header'>
                 <h1>Yelp</h1>
-                <p>Create a <u>collection</u> of place you love going to!</p>
+                <p>Discover places <u>around you</u> and add them to your personal <u>collection</u>!</p>
 
                 <SearchBusiness/>
             </div>

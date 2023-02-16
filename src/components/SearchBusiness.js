@@ -4,7 +4,7 @@ import { newSearch } from '../features/search/searchSlice'
 import { getBusinesses } from '../features/businesses/businessesThunk'
 
 function SearchBusiness(){
-    const [searchString, setSearchString] = useState('Food')
+    const [searchString, setSearchString] = useState('')
     const searchTerm = useSelector(state => state.searchReducer.value)
 
     const dispatch = useDispatch()
