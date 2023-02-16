@@ -1,14 +1,17 @@
+import { useSelector } from 'react-redux';
+
+import BusinessCard from './BusinessCard'
 function Collections(){
+    const myCollections = useSelector(state => state.collectionsReducer.value)
+
     return (
         <div className='Collections'>
-            <h2>My Collections</h2>
-            {/* Add thumbnail; first picture of first business */}
-
-            <div className='single-collection'>
-                {/* <img></img> */}
-                <h3>Target</h3>
-                <p>Description</p>
-            </div>
+            <h2>My Favorites</h2>
+            {myCollections.map(collection => {
+                return (
+                    <BusinessCard business={collection}></BusinessCard>
+                )
+            })}
         </div>
     )
 }

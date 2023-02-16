@@ -2,6 +2,7 @@ import '../styles/Home.css'
 import { useSelector } from 'react-redux'
 import SearchBusiness from './SearchBusiness'
 import SearchResults from './SearchResults'
+import LoadingScreen from './LoadingScreen'
 
 function Home(){
     // Reminder: rename state object names -> https://redux.js.org/usage/structuring-reducers/using-combinereducers
@@ -16,7 +17,8 @@ function Home(){
                 <SearchBusiness/>
             </div>
 
-            <SearchResults businesses={businesses}/>
+            {/* <SearchResults businesses={businesses}/> */}
+            <LoadingScreen />
         </main>
     )
 }

@@ -1,12 +1,12 @@
 import Categories from './Categories'
 import pinIcon from '../assets/pin.png';
+import AddRemoveCollctnBtn from './AddRemoveCollctnBtn'
 
 function BusinessCard(props){
     const { business } = props;
-
     return (
             <div className="business-card">
-                <a href={business.url} target="_blank">
+                <a href={business.url} target="_blank" rel="noreferrer">
 
                     <div className='thumbnail'>
                         <img src={ business.image_url } alt="Business Thumbnail"></img>
@@ -34,7 +34,7 @@ function BusinessCard(props){
                     </div>
 
                     <div className='right-div'>
-                        <button className='cta-btn hover-effect'>Add</button>
+                        <AddRemoveCollctnBtn business={business}/>
                     </div>
                 </div>
             </div>
