@@ -19,7 +19,6 @@ export const businessesSlice = createSlice({
     extraReducers: (builder) => {
       builder
         .addCase(getBusinesses.pending, (state) => {
-          console.log('loading')
           state.isLoading = true
         })
         .addCase(getBusinesses.fulfilled, (state, action) => {

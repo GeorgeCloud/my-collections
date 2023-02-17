@@ -12,8 +12,8 @@ function NavBar(){
 
             <ul className="nav-links">
                 <li>
-                    <Link to='/'>
-                    <u>Home</u>
+                    <Link to=''>
+                        <u>Home</u>
                     </Link>
                 </li>
 
