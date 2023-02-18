@@ -2,7 +2,7 @@ import { addToCollection, removeFromCollection } from '../features/collections/c
 import { useSelector, useDispatch } from 'react-redux';
 
 export default function AddRemoveCollctnBtn({ business }){
-    const myCollections = useSelector(state => state.collectionsReducer.value)
+    const myCollections = useSelector(state => state.collectionsReducer.businesses)
     const dispatch = useDispatch();
     const inCollection = myCollections.includes(business)
 

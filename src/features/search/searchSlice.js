@@ -3,10 +3,10 @@ import { createSlice } from '@reduxjs/toolkit'
 export const search = createSlice({
     name: 'search',
     initialState: {
-        value: 'food'
+        searchTerm: 'food'
     },
     reducers: {
-        newSearch: (state, action) => { state.value = action.payload }
+        newSearch: (state, action) => { state.searchTerm = action.payload }
     }
 })
 

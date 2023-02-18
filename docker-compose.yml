@@ -1,0 +1,22 @@
+  version: '3.7'
+
+  services:
+    web:
+      build:
+        context: .
+        dockerfile: Dockerfile.client
+      volumes:
+        - .:/code
+      ports:
+        - "3000:3000"
+      depends_on:
+        - proxy
+      restart: always
+    proxy:
+      build:
+        context: .
+        dockerfile: Dockerfile.proxy
+      image: proxy-server
+      environment:
+        YElP_API_KEY: ${YElP_API_KEY}
+      restart: always

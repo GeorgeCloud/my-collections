@@ -3,12 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 export const collectionsSlice = createSlice({
     name: 'collections',
     initialState: {
-        value: []
+        businesses: []
     },
     reducers: {
-        addToCollection: (state, action) => {state.value.push(action.payload)},
+        addToCollection: (state, action) => {state.businesses.push(action.payload)},
         removeFromCollection: (state, action) => {
-            console.log(action.payload)
+            state.businesses = state.businesses.filter(business => business.id !== action.payload.id)
         },
 
     },

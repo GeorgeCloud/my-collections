@@ -1,0 +1,13 @@
+FROM python:3.8-slim-buster
+
+WORKDIR /app
+
+COPY proxy.py requirements.txt ./
+
+RUN pip3 install -r requirements.txt
+
+ENV FLASK_APP=proxy.py
+
+EXPOSE 5000
+
+CMD ["gunicorn", "-b", ":5000", "proxy:app"]

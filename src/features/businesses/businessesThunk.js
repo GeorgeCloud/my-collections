@@ -28,7 +28,6 @@ export const businessesSlice = createSlice({
     },
 })
 
-
 export const { update } = businessesSlice.actions
 
 export default businessesSlice.reducer

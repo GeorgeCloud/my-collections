@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import BusinessCard from './BusinessCard'
 function Collections(){
-    const myCollections = useSelector(state => state.collectionsReducer.value)
+    const myCollections = useSelector(state => state.collectionsReducer.businesses)
 
     return (
             <div>
