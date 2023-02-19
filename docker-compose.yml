@@ -18,5 +18,5 @@
         dockerfile: Dockerfile.proxy
       image: proxy-server
       environment:
-        YElP_API_KEY: ${YElP_API_KEY}
+        YELP_API_KEY: ${YELP_API_KEY}
       restart: always
