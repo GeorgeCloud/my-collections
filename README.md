@@ -11,7 +11,7 @@ Then
 `docker-compose build`
 
 Now
-`EXPORT YELP_API_KEY=""`
+`EXPORT YELP_API_KEY="<YOUR_YELP_API_KEY>"`
 
 To project run
 `docker-compose up`
