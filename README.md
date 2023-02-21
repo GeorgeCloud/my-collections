@@ -17,9 +17,7 @@ To project run
 `docker-compose up`
 ## That's it!
 
-# Manual run will require
-
-
+# Manual
 ### `npm install`
 ### `npm start`
 
