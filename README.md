@@ -10,14 +10,15 @@ Ways to run project
 Then
 `docker-compose build`
 
-Now
+Now create a `.env` and set `YELP_API_KEY` or run
+
 `EXPORT YELP_API_KEY="<YOUR_YELP_API_KEY>"`
 
-To project run
+To run project
 `docker-compose up`
 ## That's it!
 
-# Manual
+# To run project manually
 ### `npm install`
 ### `npm start`
 
@@ -30,8 +31,7 @@ python3 pip install -r requirements.txt
 EXPORT YELP_API_KEY="<YOUR_YELP_API_KEY>"
 ```
 
-Now to start the project run
+Now to start the proxy sever(used for querying yelp's API)
 ### `python proxy.py`
-
 
 # Now visit your local instance running on http://localhost:3000
