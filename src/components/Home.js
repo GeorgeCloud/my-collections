@@ -12,7 +12,15 @@ function Home(){
     return (
         <main>
             <div className='page-header'>
-                <h1>Yelp</h1>
+                <h1 className='home-title'>
+
+                    <span className='app-name'>Yelp</span>&nbsp;
+                    by&nbsp;
+                    <a href="https://georgecloud.github.io/Resume">
+                        <u>George Ceja</u>
+                    </a>
+                </h1>
+
                 <p>Discover places <u>around you</u> and add them to your personal <u>collection</u>!</p>
 
                 <SearchBusiness/>

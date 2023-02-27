@@ -2,6 +2,18 @@ body {
   /* background-color: rgb(254, 174, 171); */
 }
 
+.app-name {
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.home-title {
+  font-size: 15px;
+  font-weight: normal;
+  display: inline-block;
+  margin-left: 4.5vw;
+}
+
 .App {
   width: 100vw;
   text-align: center;
