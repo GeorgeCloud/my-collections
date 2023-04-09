@@ -42,4 +42,5 @@ Now to start the proxy sever(used for querying yelp's API):
 
 `python proxy.py`
 
-# Now visit your local instance running on http://localhost:3000
+# Now visit your local instance running on http://localhost:3000.
+

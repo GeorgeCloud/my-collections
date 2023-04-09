@@ -85,3 +85,36 @@
     font-weight: 900;
     font-style: oblique;
 }
+
+@media only screen and (max-width: 815px) {
+    body {
+        background-color: lightblue;
+    }
+
+    .business-card-grid {
+        gap: 0rem;
+        /* position: relative; */
+        column-count: 2;
+        /* margin: auto; */
+        /* padding: 30px; */
+        /* width: 800px; */
+    }
+
+}
+
+
+@media only screen and (max-width: 515px) {
+    body {
+        background-color: red;
+    }
+
+    .business-card-grid {
+        gap: 1rem;
+        position: relative;
+        column-count: 1;
+        margin: auto;
+        padding: 30px;
+        width: 800px;
+    }
+
+}
