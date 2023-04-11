@@ -2,6 +2,12 @@
 
 Share your favorite places with friends by building sharable collections. (React & Yelp)
 
+Some to come features:
+	Sharable Profiles
+	Custom Albums
+	Discovery tab (Recommendation System)
+	Caching
+
 [Live Deployment](http://yelp.reveal.dev)
 
 To run this project first clone this repository. There is two ways to this project:
