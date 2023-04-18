@@ -1,26 +1,14 @@
 # A simple proxy
-from flask import Flask, request
-from os import environ
-import requests
+from flask import Flask
+from blueprints.session import session_bp
+from blueprints.user import user_bp
+from blueprints.yelp import yelp_bp
 
 app = Flask(__name__)
 
-YELP_API_URL = 'https://api.yelp.com/v3/businesses/search'
-YELP_API_KEY = environ.get('YELP_API_KEY')
-
-@app.route('/businesses')
-def proxy_link():
-    bussinesses = requests.get(
-                    YELP_API_URL,
-                    params={
-                        'latitude' : request.args['latitude'],
-                        'longitude': request.args['longitude'],
-                        'term'     : request.args['term'], 
-                    },
-                    headers={'Authorization': YELP_API_KEY}
-                )
-
-    return bussinesses.json()
+app.register_blueprint(session_bp, url_prefix='/api/session')
+app.register_blueprint(user_bp, url_prefix='/api/users')
+app.register_blueprint(yelp_bp, url_prefix='/api/businesses')
 
 
 if __name__ == "__main__":

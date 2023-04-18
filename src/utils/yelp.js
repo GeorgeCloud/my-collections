@@ -3,7 +3,7 @@
 
 // Fetch Yelp data through internal proxy server
 async function searchYelpBusinesses(position, searchTerm){
-  const url = '/businesses?' + new URLSearchParams({
+  const url = 'api/businesses?' + new URLSearchParams({
     latitude  : position.coords.latitude,
     longitude : position.coords.longitude,
     term     : searchTerm
