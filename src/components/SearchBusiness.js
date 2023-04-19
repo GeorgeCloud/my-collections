@@ -1,8 +1,6 @@
 import SearchBusinessForm from './SearchBusinessForm'
 
 function SearchBusiness(){
-
-
     return (
         <SearchBusinessForm />
     )

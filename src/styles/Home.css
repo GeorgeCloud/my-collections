@@ -33,6 +33,7 @@
     border: 0px;
     color: white;
     background-color: red;
+    cursor: pointer;
 }
 
 .hover-effect {

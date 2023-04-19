@@ -7,7 +7,7 @@ YELP_API_KEY = environ.get('YELP_API_KEY')
 
 yelp_bp = Blueprint('yelp_bp', __name__, template_folder='templates')
 
-@yelp_bp.route('/')
+@yelp_bp.route('/', methods=['GET'])
 def get_businesses():
     businesses = requests.get(
                     YELP_API_URL,
