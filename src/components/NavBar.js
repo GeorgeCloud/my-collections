@@ -22,6 +22,12 @@ function NavBar(){
                         <u>My Collections</u>
                     </Link>
                 </li>
+
+                <li>
+                    <Link to='/access'>
+                        <u>Sign in</u>
+                    </Link>
+                </li>
             </ul>
         </nav>
     )

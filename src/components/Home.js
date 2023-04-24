@@ -21,7 +21,7 @@ function Home(){
                     </a>
                 </h1>
 
-                <p>Discover places <u>around you</u> and add them to your personal <u>collection</u>!</p>
+                <p>Discover places <u>around you</u> and add them to your personal <u>collections</u>!</p>
 
                 <SearchBusiness/>
             </div>
