@@ -4,7 +4,7 @@ import { handleAuthForm } from '../utils/handleAuthForm'
 function SignInForm(){
   return (
     <form onSubmit={handleAuthForm}>
-      <input type="hidden" name="route" value="/api/session" />
+      <input type="hidden" name="route" value="/api/sessions" />
 
       <label for="username">username</label>
       <input id="username" type="text" name="username" required />

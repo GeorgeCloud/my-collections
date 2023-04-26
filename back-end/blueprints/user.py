@@ -1,7 +1,10 @@
 from flask import Blueprint, request
+from flask_bcrypt import generate_password_hash
+from utils.sessions import create_session
 from bson.json_util import dumps
 from json import loads
 from db import db
+
 
 user_bp = Blueprint('user_bp', __name__, template_folder='templates')
 
@@ -12,19 +15,21 @@ def create_user():
         username = req_data['username']
 
         if db.users.find_one({'username': username}):
-            return {message: }
+            return {'message': 'username already used'}
         else:
-            user_document = {
+            user_doc = {
                 'username': username,
-                'password': req_data['password']  # hash
+                'password': generate_password_hash(req_data['password'], 10)
             }
 
-            new_user = db.users.insert_one(user_document)
+            db.users.insert_one(user_doc)
+            del user_doc['password']
 
-            del new_user['password']
-            new_user['session_id'] = 707  # validate session_id is present in db or in memory
+            session_id = create_session(user_doc)
 
-            return loads(dumps(new_user)), 201
+            user_doc['session_id'] = session_id
+
+            return loads(dumps(user_doc)), 201
 
 @user_bp.route('/<username>', methods=['GET'])
 def get_user(username):
