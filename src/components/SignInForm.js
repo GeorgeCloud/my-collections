@@ -1,9 +1,9 @@
 import '../styles/Home.css'
 import { handleAuthForm } from '../utils/handleAuthForm'
 
-function SignInForm(){
+function SignInForm({ navigate }){
   return (
-    <form onSubmit={handleAuthForm}>
+    <form onSubmit={(e) => { handleAuthForm(e, navigate) }}>
       <input type="hidden" name="route" value="/api/sessions" />
 
       <label for="username">username</label>

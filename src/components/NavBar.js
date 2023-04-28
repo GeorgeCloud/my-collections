@@ -17,6 +17,7 @@ function NavBar(){
                     </Link>
                 </li>
 
+                {/* Hide when logged out */}
                 <li>
                     <Link to='/collections'>
                         <u>My Collections</u>

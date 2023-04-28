@@ -1,9 +1,13 @@
 import '../styles/Home.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import SignInForm from './SignInForm'
 import SignUpForm from './SignUpForm'
 
+
 function AccessPage(){
+  const navigate = useNavigate();
+
   const [isSigningIn, setIsSigningIn] = useState(true);
 
   return (
@@ -23,8 +27,8 @@ function AccessPage(){
       </div>
 
       {(isSigningIn === true)
-          ? <SignInForm />
-          : <SignUpForm />
+          ? <SignInForm navigate={navigate} />
+          : <SignUpForm navigate={navigate} />
       }
     </main>
   )
