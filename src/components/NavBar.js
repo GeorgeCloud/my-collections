@@ -3,36 +3,35 @@ import '../styles/NavBar.css'
 import { Link } from 'react-router-dom';
 
 function NavBar(){
-    return (
-        <nav>
-            <Link className='company' to='/'>
-                Yelp
-                <img src='https://static.thenounproject.com/png/2221162-200.png' alt='Logo'/>
-            </Link>
+  return (
+    <nav>
+      <Link className='company' to='/'>
+        Yelp
+        <img src='https://static.thenounproject.com/png/2221162-200.png' alt='Logo'/>
+      </Link>
 
-            <ul className="nav-links">
-                <li>
-                    <Link to=''>
-                        <u>Home</u>
-                    </Link>
-                </li>
+      <ul className="nav-links">
+        <li>
+          <Link to=''>
+            <u>Home</u>
+          </Link>
+        </li>
 
-                {/* Hide when logged out */}
-                <li>
-                    <Link to='/collections'>
-                        <u>My Collections</u>
-                    </Link>
-                </li>
+        {/* Hide when logged out */}
+        <li>
+          <Link to='/collections'>
+            <u>My Collections</u>
+          </Link>
+        </li>
 
-                <li>
-                    <Link to='/access'>
-                        <u>Sign in</u>
-                    </Link>
-                </li>
-            </ul>
-        </nav>
-    )
+        <li>
+          <Link to='/access'>
+            <u>Sign in</u>
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  )
 }
-
 
 export default NavBar

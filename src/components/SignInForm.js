@@ -3,7 +3,7 @@ import { handleAuthForm } from '../utils/handleAuthForm'
 
 function SignInForm({ navigate }){
   return (
-    <form onSubmit={(e) => { handleAuthForm(e, navigate) }}>
+    <form onSubmit={(e) => handleAuthForm(e, navigate) }>
       <input type="hidden" name="route" value="/api/sessions" />
 
       <label for="username">username</label>
