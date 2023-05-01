@@ -8,6 +8,7 @@ function Home(){
   // Reminder: rename state object names -> https://redux.js.org/usage/structuring-reducers/using-combinereducers
   let isLoading = useSelector(state => state.businessesReducer.isLoading)
   let businesses = useSelector(state => state.businessesReducer.value)
+  let session = useSelector(state => state.sessionReducer.username)
 
   return (
     <main>
@@ -21,6 +22,8 @@ function Home(){
         </h1>
 
         <p>Discover places <u>around you</u> and add them to your personal <u>collections</u>!</p>
+
+        <p>Current user {session}</p>
 
         <SearchBusiness/>
       </div>

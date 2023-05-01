@@ -1,4 +1,6 @@
-export const handleAuthForm = async(e, navigate) => {
+import { authenticate } from '../features/session/sessionSlice'
+
+export const handleAuthForm = async(e, navigate, dispatch) => {
   e.preventDefault();
 
   const options = {
@@ -16,7 +18,7 @@ export const handleAuthForm = async(e, navigate) => {
   const user = await apiReponse.json();
 
   if (apiReponse.status === 200){
-    // Implement sessions
+    dispatch(authenticate(user));
     navigate('/');
   } else {
     navigate('/access')

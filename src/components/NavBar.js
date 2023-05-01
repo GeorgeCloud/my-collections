@@ -1,8 +1,16 @@
 import '../styles/NavBar.css'
-
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '../features/session/sessionSlice'
 
-function NavBar(){
+export default function NavBar(){
+  const dispatch = useDispatch();
+
+  const signout = () => {
+    // remove localStorage session
+    dispatch(logout());
+  };
+
   return (
     <nav>
       <Link className='company' to='/'>
@@ -29,9 +37,13 @@ function NavBar(){
             <u>Sign in</u>
           </Link>
         </li>
+
+        <li>
+          <Link to='/'>
+            <u onClick={() => signout()}>Logout</u>
+          </Link>
+        </li>
       </ul>
     </nav>
   )
 }
-
-export default NavBar

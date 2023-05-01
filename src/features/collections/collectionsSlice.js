@@ -6,7 +6,7 @@ export const collectionsSlice = createSlice({
         businesses: []
     },
     reducers: {
-        addToCollection: (state, action) => {state.businesses.push(action.payload)},
+        addToCollection: (state, action) => state.businesses.push(action.payload),
         removeFromCollection: (state, action) => {
             state.businesses = state.businesses.filter(business => business.id !== action.payload.id)
         },

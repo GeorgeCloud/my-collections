@@ -1,9 +1,12 @@
 import '../styles/Home.css'
 import { handleAuthForm } from '../utils/handleAuthForm'
+import { useDispatch } from 'react-redux';
 
-function SignInForm({ navigate }){
+export default function SignInForm({ navigate }){
+  const dispatch = useDispatch();
+
   return (
-    <form onSubmit={(e) => handleAuthForm(e, navigate) }>
+    <form onSubmit={(e) => handleAuthForm(e, navigate, dispatch)}>
       <input type="hidden" name="route" value="/api/sessions" />
 
       <label for="username">username</label>
@@ -16,5 +19,3 @@ function SignInForm({ navigate }){
     </form>
   )
 }
-
-export default SignInForm;

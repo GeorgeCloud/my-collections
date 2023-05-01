@@ -1,9 +1,10 @@
 import '../styles/Home.css'
+import { useDispatch } from 'react-redux';
 import { handleAuthForm } from '../utils/handleAuthForm'
 
 function SignUpForm({ navigate }){
   return (
-    <form onSubmit={(e) => handleAuthForm(e, navigate)}>
+    <form onSubmit={(e) => handleAuthForm(e, navigate, useDispatch)}>
       <input type="hidden" name="route" value="/api/users" />
 
       <label for="username">username</label>
