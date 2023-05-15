@@ -4,8 +4,8 @@ import { handleAuthForm } from '../utils/handleAuthForm'
 
 function SignUpForm({ navigate }){
   return (
-    <form onSubmit={(e) => handleAuthForm(e, navigate, useDispatch)}>
-      <input type="hidden" name="route" value="/api/users" />
+    <form class="auth-form" onSubmit={(e) => handleAuthForm(e, navigate, useDispatch)}>
+      <input type="hidden" name="route" value="/api/users/" />
 
       <label for="username">username</label>
       <input id="username" type="text" name="username" required />

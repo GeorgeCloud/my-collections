@@ -1,10 +1,11 @@
 import '../styles/NavBar.css'
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../features/session/sessionSlice'
 
 export default function NavBar(){
   const dispatch = useDispatch();
+  const session_username = useSelector(state => state.sessionReducer.username)
 
   const signout = () => {
     // remove localStorage session
@@ -38,11 +39,13 @@ export default function NavBar(){
           </Link>
         </li>
 
-        <li>
-          <Link to='/'>
-            <u onClick={() => signout()}>Logout</u>
-          </Link>
-        </li>
+        {session_username && (
+          <li>
+            <Link to='/'>
+              <u onClick={() => signout()}>Logout</u>
+            </Link>
+          </li>
+        )}
       </ul>
     </nav>
   )

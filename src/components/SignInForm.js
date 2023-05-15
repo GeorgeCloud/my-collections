@@ -6,8 +6,8 @@ export default function SignInForm({ navigate }){
   const dispatch = useDispatch();
 
   return (
-    <form onSubmit={(e) => handleAuthForm(e, navigate, dispatch)}>
-      <input type="hidden" name="route" value="/api/sessions" />
+    <form class="auth-form" onSubmit={(e) => handleAuthForm(e, navigate, dispatch)}>
+      <input type="hidden" name="route" value="/api/sessions/" />
 
       <label for="username">username</label>
       <input id="username" type="text" name="username" required />

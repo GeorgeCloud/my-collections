@@ -13,23 +13,23 @@ function AccessPage(){
   return (
     <main>
       <div className='page-header'>
-      {(isSigningIn === true)
-          ? (<div>
-              <h1>Signin</h1>
-              <u style={{'cursor':'pointer'}}  onClick={() => setIsSigningIn(!isSigningIn)}>Don't have an account? Signup</u>
-            </div>)
-
-          : (<div>
-              <h1>SignUp</h1>
-              <u style={{'cursor':'pointer'}} onClick={() => setIsSigningIn(!isSigningIn)}>Have an account? Signin</u>
+        {(isSigningIn === true)
+            ? (<div>
+                <h1>Signin</h1>
+                <u style={{'cursor':'pointer'}}  onClick={() => setIsSigningIn(!isSigningIn)}>Don't have an account? Signup</u>
               </div>)
-      }
-      </div>
 
-      {(isSigningIn === true)
-          ? <SignInForm navigate={navigate} />
-          : <SignUpForm navigate={navigate} />
-      }
+            : (<div>
+                <h1>SignUp</h1>
+                <u style={{'cursor':'pointer'}} onClick={() => setIsSigningIn(!isSigningIn)}>Have an account? Signin</u>
+                </div>)
+        }
+
+        {(isSigningIn === true)
+            ? <SignInForm navigate={navigate} />
+            : <SignUpForm navigate={navigate} />
+        }
+      </div>
     </main>
   )
 }

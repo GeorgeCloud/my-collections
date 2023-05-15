@@ -5,6 +5,10 @@
     height: 20vh;
 }
 
+.auth-form {
+  margin-top: 50px
+}
+
 .content {
     height: calc(100vh - 30vh - 42px);
 }
