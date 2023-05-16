@@ -3,6 +3,7 @@ from pymongo import MongoClient
 from flask_bcrypt import Bcrypt
 from flask_cors import CORS
 from os import environ
+import redis
 
 app    = Flask(__name__)
 bcrypt = Bcrypt(app)
@@ -15,6 +16,7 @@ client = MongoClient(uri)
 db = client.get_default_database()
 # ===========================
 
+redis_s = redis.Redis(host='localhost', port=6379)
 
 # ======= Collections ==========
 users = db.users
