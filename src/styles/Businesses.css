@@ -87,10 +87,6 @@
 }
 
 @media only screen and (max-width: 815px) {
-    body {
-        background-color: lightblue;
-    }
-
     .business-card-grid {
         gap: 0rem;
         /* position: relative; */
@@ -103,7 +99,7 @@
 }
 
 
-@media only screen and (max-width: 515px) {
+/* @media only screen and (max-width: 515px) {
     body {
         background-color: red;
     }
@@ -117,4 +113,4 @@
         width: 800px;
     }
 
-}
+} */

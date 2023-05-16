@@ -1,5 +1,6 @@
 import Categories from './Categories'
 import pinIcon from '../assets/pin.png';
+import fallBackThumbnail from '../assets/default.png';
 import AddRemoveCollctnBtn from './AddRemoveCollctnBtn'
 
 function BusinessCard(props){
@@ -9,13 +10,19 @@ function BusinessCard(props){
                 <a href={business.url} target="_blank" rel="noreferrer">
 
                     <div className='thumbnail'>
-                        <img src={ business.image_url } alt="Business Thumbnail"></img>
+                        <img
+                        src={ business.image_url }
+                        alt="Business Thumbnail"
+                        onError={(e) => e.currentTarget.src = fallBackThumbnail}
+                        />
                     </div>
 
                     <div>
                         <h3>
                             { business.name }
-                            <span className='price'> - { business.price }</span>
+                            { business.price && (
+                              <span className='price'> - { business.price }</span>
+                            )}
                         </h3>
 
                         <img className="pin-icn" src={pinIcon} alt="pin icon"/>
